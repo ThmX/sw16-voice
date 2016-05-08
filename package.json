@@ -78,6 +78,8 @@
     "dateformat": "^1.0.12",
     "flat-ui": "^2.1.1",
     "font-awesome": "^4.6.1",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
     "jquery": "^2.2.3",
     "nvd3": "^1.8.3",
     "ui-select": "^0.16.1",
