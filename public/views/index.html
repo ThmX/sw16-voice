@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="sv-initiative-box col-xs-12 col-sm-4" ng-repeat="(key, i) in initiatives">
+        <div ui-sref="initiative({key: key})" class="content">
+            <div class="flag" ng-class="i.flag"></div>
+            <div class="title">
+                <div class="category">{{i.category}}</div>
+                {{i.title}}
+            </div>
+        </div>
+    </div>
+</div>

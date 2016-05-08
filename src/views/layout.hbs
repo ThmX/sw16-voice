@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="SwissVoice" lang="de">
+    <head>
+        <title>Voice</title>
+        <link rel="stylesheet" href="/stylesheets/main.min.css"/>
+        <script src="/javascripts/jquery.min.js"></script>
+        <script src="/javascripts/bootstrap.min.js"></script>
+        <script src="/javascripts/flat-ui.min.js"></script>
+        <script src="/javascripts/main.js"></script>
+    </head>
+<body>
+<nav id="navbar-sv" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-brand">
+                <a class="navbar-brand-img" href="/"><img src="/images/voice_logo.png" alt="logo"></a>
+            </div>
+        </div>
+
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <li><div class="item"><i class="fa fa-clock-o" aria-hidden="true"></i> 28 days left</div></li>
+                <li ui-sref-active="active"><a class="item clickable" ui-sref="login">Log in</a></li>
+                <li ui-sref-active="active"><a class="item clickable" ui-sref="signup">Sign up</a></li>
+                <li ui-sref-active="active"><a class="item clickable" ui-sref="about">About</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<div id="page" class="container">
+    <ui-view></ui-view>
+</div>
+
+</body>
+</html>

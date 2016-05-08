@@ -1,0 +1,121 @@
+.sv-init-links {
+  z-index: 1000;
+  height: 60px;
+
+  .sv-init-link {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    cursor: pointer;
+
+    &.easyvote {
+      background-image: url('/images/icon-easyvote.png');
+    }
+
+    &.official {
+      background-image: url('/images/icon-official.png');
+    }
+  }
+}
+
+.sv-initiative-title {
+  z-index: 1000;
+  text-overflow: clip;
+  margin-top: 10px;
+  padding: 10px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  .fa {
+    width: 20px;
+    height: 20px;
+    color: $sv-color-dkgray;
+    font-size: 20px;
+  }
+}
+
+.sv-initiative-menu {
+  z-index: 1000;
+
+  background-color: rgba(255, 255, 255, .7);
+  border-style: solid;
+  border-width: 0;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+
+  .item {
+    display: inline-block;
+  }
+
+  .ui-slider {
+    top: 10px;
+
+    .ui-slider-primary {
+      background-color: #BDC3C7;
+    }
+
+    .ui-slider-handle {
+      background-color: $sv-color-dkgray;
+    }
+  }
+
+  .dropdown-menu {
+    background-color: rgba(255, 255, 255, .7);
+    border-style: solid;
+    border-width: 0;
+    border-radius: 5px;
+  }
+
+}
+
+.popover {
+  border-width: 0;
+}
+
+svg.sv-initiative-graph {
+  position: absolute;
+  width: 100%;
+  top: 95px;
+  left: 0;
+  padding: 50px;
+
+  .item {
+    @extend .ui-link;
+    fill: rgba(255, 255, 255, 0.8);
+    stroke-width: 0;
+
+    -webkit-transition: fill .5s ease-out;
+    -moz-transition: fill .5s ease-out;
+    transition: fill .5s ease-out;
+
+    &:hover {
+      z-index: 10;
+      fill: rgba(52, 73, 94, 0.60);
+      -moz-transition: all .5s ease-in;
+      -webkit-transition: all .5s ease-in;
+      transition: all .5s ease-in;
+    }
+
+    &:active {
+      z-index: 10;
+      fill: $sv-color-dkgray;
+      -moz-transition: all .2s ease;
+      -webkit-transition: all .2s ease;
+      transition: all .2s ease;
+    }
+  }
+}
+
+.article-frame {
+  width: 100%;
+}
+
+.article-frame-menu {
+  margin-top: -95px;
+}

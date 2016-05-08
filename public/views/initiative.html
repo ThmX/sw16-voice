@@ -1,0 +1,81 @@
+<div class="row">
+    <div class="row">
+        <div class="sv-init-links col-xs-3">
+            <div class="sv-init-link official"></div>
+            <div class="sv-init-link easyvote"></div>
+        </div>
+        <div class="sv-initiative-title col-xs-4 text-center">
+            <a class="ui-link pull-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+            {{initiative.title}}
+            <a class="ui-link pull-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="sv-initiative-menu col-xs-4 pull-right" uib-dropdown auto-close="disabled">
+            <div class="item">
+                <div class="btn-group">
+                    <label class="btn btn-default" ng-model="filters.type" uib-btn-radio="'media'">Media</label>
+                    <label class="btn btn-default" ng-model="filters.type" uib-btn-radio="'opinion'">Opinion</label>
+                </div>
+            </div>
+            <div class="item">
+                <div class="btn btn-default"><i class="fa fa-bullhorn" aria-hidden="true"></i> Express an opinion</div>
+            </div>
+            <button class="btn btn-default item" uib-dropdown-toggle>
+                Filters <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                <li class="col-xs-12">
+                    <div class="col-sm-4">Date</div>
+                    <div class="col-sm-8"><sv-slider ng-model="sliderA"></sv-slider></div>
+                </li>
+                <li class="col-xs-12">
+                    <div class="col-sm-4">Popularity</div>
+                    <div class="col-sm-8"><sv-slider ng-model="sliderB"></sv-slider></div>
+                </li>
+                <li class="col-xs-12">
+                    <div class="col-sm-4">Social activity</div>
+                    <div class="col-sm-8"><sv-slider ng-model="sliderC"></sv-slider></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <svg class="sv-initiative-graph" ng-style="{height: graph.h}">
+        <circle ng-show="filters.type === 'media'" ng-repeat="a in articles"
+                ng-click="openArticle(a)"
+                uib-popover-template="'popover-article'" popover-trigger="mouseenter"
+                popover-append-to-body="true" popover-placement="{{a.pos}}"
+                class="item" cx="{{a.x}}" cy="{{a.y}}" r="{{a.r}}" style="{fill: rgba(255, 255, 255, {{a.o}})}">
+        </circle>
+        <circle ng-show="filters.type === 'opinion'" ng-show="" ng-repeat="o in opinions"
+                uib-popover-template="'popover-opinion'" popover-trigger="mouseenter"
+                popover-append-to-body="true" popover-placement="{{o.pos}}"
+                class="item" cx="{{o.x}}" cy="{{o.y}}" r="{{o.r}}" style="{fill: rgba(255, 255, 255, {{o.o}})}">
+        </circle>
+    </svg>
+</div>
+
+<script type="text/ng-template" id="popover-opinion">
+    <img class="img-responsive" src="/images/politician-{{o.politician}}.png">
+</script>
+
+<script type="text/ng-template" id="popover-article">
+    <img class="img-responsive" ng-src="/images/media-{{a.media}}.png">
+</script>
+
+<script type="text/ng-template" id="modal-article">
+    <iframe class="article-frame" src="{{url}}" ng-style="{height: height+'px'}"></iframe>
+    <div class="article-frame-menu row">
+        <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+            <img class="img-responsive img-thumbnail" src="/images/01_community.png">
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="sv-slider">
+    <div class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+        <div ng-repeat="p in range(1, slider.position)" class="ui-slider-segment" style="margin-left: 25%;"></div>
+        <div ng-repeat="p in range(1, slider.positionMax)" class="ui-slider-segment"></div>
+        <div class="ui-slider-range ui-slider-primary ui-widget-header ui-corner-all ui-slider-range-min" style="width: {{percent()}}%;"></div>
+        <div class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: {{percent()}}%;"></div>
+    </div>
+</script>

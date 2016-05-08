@@ -1,0 +1,27 @@
+@import url("../../node_modules/ui-select/dist/select.min.css");
+@import url("../../node_modules/nvd3/build/nv.d3.min.css");
+
+// angular-ui-notification (https://github.com/alexcrack/angular-ui-notification)
+@import url("../../node_modules/angular-ui-notification/dist/angular-ui-notification.min.css");
+
+// Bootstrap (https://github.com/twbs/bootstrap-sass)
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap-compass";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Flat UI (http://designmodo.github.io/Flat-UI)
+@import url("../../node_modules/flat-ui/css/flat-ui.css");
+
+// Font Awesome (https://github.com/FortAwesome/Font-Awesome)
+//$fa-font-path: "../../../bower_components/font-awesome/fonts";
+@import "../../node_modules/font-awesome/scss/font-awesome";
+
+$sv-color-turquoise: #1ABC9C;
+$sv-color-red: #FA6E78;
+$sv-color-dkgray: #34495E;
+$sv-color-ltgray: #ECF0F1;
+$sv-color-silver: #BDC3C7;
+
+@import "common";
+@import "navbar";
+@import "index";
+@import "initiative";

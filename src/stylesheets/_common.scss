@@ -1,0 +1,74 @@
+html {
+  position: relative;
+  background: red;
+  background: linear-gradient(90deg, $sv-color-red 30%, $sv-color-ltgray 45%, $sv-color-ltgray 55%, $sv-color-turquoise 70%);
+  line-height: 22px;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  line-height: 22px;
+  min-height: 100%;
+
+  margin-bottom: 60px;
+  background: transparent;
+}
+
+.footer a,
+.footer a:hover {
+  color: white;
+}
+
+.panel#login {
+  margin-top: 30px;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#page {
+  padding-top: 80px;
+}
+
+.anchor {
+  padding-top: 120px;
+  margin-top: -120px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+
+  padding-top: 10px;
+  padding-left: 15px;
+  background-color: black;
+  color: white;
+}
+
+.ui-link {
+  cursor: pointer;
+}
+
+.ui-link:hover {
+  color: #990000;
+}
+
+.menu-link {
+  cursor: pointer;
+}
+
+.menu-link a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+ * https://angular-ui.github.io/bootstrap/
+ */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
