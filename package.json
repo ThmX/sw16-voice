@@ -6,9 +6,9 @@
     "node": ">= 0.10.0"
   },
   "scripts": {
-    "postinstall": "grunt",
+    "postinstall": "node_modules/grunt/bin/grunt grunt",
     "start": "node ./bin/www",
-    "test": "grunt karma"
+    "test": "node_modules/grunt/bin/grunt karma"
   },
   "browser": {
     "fs": false
